@@ -27,8 +27,17 @@ namespace ApiRestfulSample.Controllers
         [HttpGet]
         public IEnumerable<ProductEntity> Get()
         {
-            _logger.LogInformation("Dont worry about a thing cause every little thing gonna be alright");
-            return _context.Products.ToList();            
+            List<ProductEntity> products = _context.Products.ToList();
+            if (products != null)
+            {
+                _logger.LogInformation("Dont worry about a thing cause every little thing gonna be alright");
+                return products;
+            }
+            else
+            {
+                _logger.LogWarning("There is not product with this id");
+                return null;
+            }
         }
 
         // GET api/<ValuesController>/5
@@ -36,7 +45,15 @@ namespace ApiRestfulSample.Controllers
         public ProductEntity Get(string id)
         {
             var product = _context.Products.FirstOrDefault(p => p.ProductId == id);
-            return product;
+            if (product != null)
+            {
+                _logger.LogInformation("Dont worry about a thing cause every little thing gonna be alright");
+                return product;
+            }
+            else {
+                _logger.LogWarning("There is not product with this id");
+                return null;
+            }
         }
 
         // POST api/<ValuesController>
@@ -47,11 +64,13 @@ namespace ApiRestfulSample.Controllers
             {
                 _context.Products.Add(product);
                 _context.SaveChanges();
+                _logger.LogInformation("Dont worry about a thing cause every little thing gonna be alright");
                 //Retorna un 200
                 return Ok();
             }
             catch (System.Exception ex)
             {
+                _logger.LogError(ex, "something goes wrong, maybe you have to change your life ");
                 //Retorna un 400, el servidor no supo interpretar la solicitud
                 return BadRequest();
             }
@@ -69,16 +88,19 @@ namespace ApiRestfulSample.Controllers
                     _context.SaveChanges();
 
                     //Retorna un 200
+                    _logger.LogInformation("Dont worry about a thing cause every little thing gonna be alright");
                     return Ok();
                 }
                 else {
                     //Retorna un 400, el servidor no supo interpretar la solicitud
+                    _logger.LogWarning("There is not product with this id");
                     return BadRequest();
                 }
             }
             catch (System.Exception ex)
             {
                 //Retorna un 400, el servidor no supo interpretar la solicitud
+                _logger.LogError(ex, "something goes wrong, maybe you have to change your life ");
                 return BadRequest();
             }
         }
@@ -96,17 +118,20 @@ namespace ApiRestfulSample.Controllers
                     _context.SaveChanges();
 
                     //Retorna un 200
+                    _logger.LogInformation("Dont worry about a thing cause every little thing gonna be alright");
                     return Ok();
                 }
                 else
                 {
                     //Retorna un 400, el servidor no supo interpretar la solicitud
+                    _logger.LogWarning("There is not product with this id");
                     return BadRequest();
                 }
             }
             catch (System.Exception ex)
             {
                 //Retorna un 400, el servidor no supo interpretar la solicitud
+                _logger.LogError(ex, "something goes wrong, maybe you have to change your life ");
                 return BadRequest();
             }
         }
