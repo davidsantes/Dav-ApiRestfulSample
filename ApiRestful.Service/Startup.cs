@@ -1,13 +1,13 @@
-using ApiRestfulSample.Contexts;
+using ApiRestful.Service.Contexts;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-using Microsoft.EntityFrameworkCore;
 
-namespace ApiRestfulSample
+namespace ApiRestful.Service
 {
     public class Startup
     {

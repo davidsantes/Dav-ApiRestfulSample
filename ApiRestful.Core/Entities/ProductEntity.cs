@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace ApiRestfulSample.Entities
+namespace ApiRestful.Core.Entities
 {
     public class ProductEntity
     {

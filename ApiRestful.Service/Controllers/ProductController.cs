@@ -1,14 +1,14 @@
-﻿using ApiRestfulSample.Contexts;
-using ApiRestfulSample.Entities;
+﻿using ApiRestful.Core.Entities;
+using ApiRestful.Service.Contexts;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.Extensions.Logging;
-using Microsoft.EntityFrameworkCore;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace ApiRestfulSample.Controllers
+namespace ApiRestful.Service.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

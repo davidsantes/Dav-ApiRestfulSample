@@ -1,7 +1,7 @@
-﻿using ApiRestfulSample.Entities;
+﻿using ApiRestful.Core.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace ApiRestfulSample.Contexts
+namespace ApiRestful.Service.Contexts
 {
     public class InventoryContext : DbContext
     {

@@ -4,7 +4,7 @@ using System;
 using Serilog;
 using Serilog.Formatting.Compact;
 
-namespace ApiRestfulSample
+namespace ApiRestful.Service
 {
     public class Program
     {
