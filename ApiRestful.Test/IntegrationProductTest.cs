@@ -1,5 +1,6 @@
 ﻿using ApiRestful.Test.ApiTestDtos;
 using ApiRestful.Test.Providers;
+using FluentAssertions;
 using System;
 using System.Collections.Generic;
 using System.Net;
@@ -27,8 +28,8 @@ namespace ApiRestful.Test
                 HttpResponseMessage response = await client.GetAsync("/api/product");
                 response.EnsureSuccessStatusCode();
 
-                // Assert
-                Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+                // Assert                
+                response.StatusCode.Should().Be(HttpStatusCode.OK);
             }
         }
 
@@ -53,7 +54,7 @@ namespace ApiRestful.Test
                 sut_list_products = await JsonSerializer.DeserializeAsync<List<ProductDto>>(responseStream, jsonSerializerOptions);
 
                 // Assert
-                Assert.True(sut_list_products.Count > 0);
+                sut_list_products.Count.Should().BeGreaterThan(0);                
             }
         }
 
@@ -82,8 +83,8 @@ namespace ApiRestful.Test
                 HttpResponseMessage response = await client.PostAsync("/api/product", stringContent);
 
                 // Assert
-                response.EnsureSuccessStatusCode();
-                Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+                response.EnsureSuccessStatusCode();                
+                response.StatusCode.Should().Be(HttpStatusCode.OK);
             }
         }
     }
