@@ -1,5 +1,5 @@
 # Ejemplo de API restful con .NET 5
-Pequeño ejemplo compuesto de un APiRestful, que recupera los productos desde una base de datos y se testea que los verbos HttpGet, HttpPost, HttpPut, HttpDelete funcione correctamente a la hora de comunicarse con la base de datos.
+Pequeño ejemplo compuesto de un APiRestful, que recupera los productos desde una base de datos y se testea que los verbos HttpGet, HttpPost, HttpPut, HttpDelete funcionen correctamente.
 
 Los puntos tratados en el ejemplo son:
 * ApiRestful.Service: servicio API que provee los métodos de comunicación con los productos de la base de datos.
@@ -11,6 +11,12 @@ En este ejemplo me he apoyado en las siguientes librerías:
 * **Autodocumentación de la API restful:** Mediante [Swagger](https://swagger.io/)
 * **Librería de testing:** Mediante [XUnit](https://xunit.net/)
 * **Sintaxis intuitiva para testing:** Mediante [FluentAssertions](https://fluentassertions.com/)
+
+Otros puntos de interés:
+* **Herramienta de Testing:** Como herramienta externa de testeto, aconsejo [Postman](https://www.postman.com/)
+* **Mapeo de objetos:** Mediante [AutoMapper](https://automapper.org/)
+* **Logging:** Mediante [Serilog](https://serilog.net/)
+
 
 ### Pre-requisitos 📋
 
