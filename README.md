@@ -1,5 +1,5 @@
 # Ejemplo de API restful con .NET 5
-Pequeño ejemplo compuesto de un APiRestful, que recupera los productos desde una base de datos y que los verbos de HttpGet, HttpPost, HttpPut, HttpDelete, garantizando que funcionen correctamente.
+Pequeño ejemplo compuesto de una APiRestful, con un servicio (ProductController) que gestiona productos de una base de datos, a través de los verbos de HttpGet, HttpPost, HttpPut y HttpDelete. El ejemplo también garantiza que funcionen correctamente a través de test de integración.
 
 Los puntos tratados en el ejemplo son:
 * ApiRestful.Service: servicio API que provee los métodos de comunicación con los productos de la base de datos.
