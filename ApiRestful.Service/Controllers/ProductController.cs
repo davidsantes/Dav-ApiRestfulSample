@@ -1,5 +1,5 @@
 ﻿using ApiRestful.Service.Contexts;
-using ApiRestful.Service.Dtos;
+using ApiRestful.Service.ExternalDtos;
 using ApiRestful.Service.Entities;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
@@ -26,7 +26,7 @@ namespace ApiRestful.Service.Controllers
 
         // GET: api/<ValuesController>
         [HttpGet]
-        public IEnumerable<ProductDto> Get()
+        public IEnumerable<ProductExternalDto> Get()
         {
             List<ProductEntity> products;
             using (var context = new InventoryContext())
@@ -36,7 +36,7 @@ namespace ApiRestful.Service.Controllers
 
             if (products != null)
             {
-                List<ProductDto> productsDto = _mapper.Map<List<ProductEntity>, List<ProductDto>>(products);                
+                List<ProductExternalDto> productsDto = _mapper.Map<List<ProductEntity>, List<ProductExternalDto>>(products);                
                 _logger.LogInformation("Dont worry about a thing cause every little thing gonna be alright");
                 return productsDto;
             }
@@ -49,7 +49,7 @@ namespace ApiRestful.Service.Controllers
 
         // GET api/<ValuesController>/5
         [HttpGet("{id}")]
-        public ProductDto Get(string id)
+        public ProductExternalDto Get(string id)
         {
             ProductEntity product;
             using (var context = new InventoryContext())
@@ -59,7 +59,7 @@ namespace ApiRestful.Service.Controllers
             
             if (product != null)
             {
-                ProductDto productDto = _mapper.Map<ProductEntity, ProductDto>(product);
+                ProductExternalDto productDto = _mapper.Map<ProductEntity, ProductExternalDto>(product);
                 _logger.LogInformation("Dont worry about a thing cause every little thing gonna be alright");
                 return productDto;
             }
@@ -71,11 +71,11 @@ namespace ApiRestful.Service.Controllers
 
         // POST api/<ValuesController>
         [HttpPost]
-        public ActionResult Post([FromBody] ProductDto productDto)
+        public ActionResult Post([FromBody] ProductExternalDto productDto)
         {            
             try
             {
-                ProductEntity product = _mapper.Map<ProductDto, ProductEntity>(productDto);
+                ProductEntity product = _mapper.Map<ProductExternalDto, ProductEntity>(productDto);
 
                 using (var context = new InventoryContext())
                 {
@@ -97,13 +97,13 @@ namespace ApiRestful.Service.Controllers
 
         // PUT api/<ValuesController>/5
         [HttpPut("{id}")]
-        public ActionResult ActionResult(string id, [FromBody] ProductDto productDto)
+        public ActionResult ActionResult(string id, [FromBody] ProductExternalDto productDto)
         {
             try
             {
                 if (productDto.ProductId == id)
                 {
-                    ProductEntity product = _mapper.Map<ProductDto, ProductEntity>(productDto);
+                    ProductEntity product = _mapper.Map<ProductExternalDto, ProductEntity>(productDto);
 
                     using (var context = new InventoryContext())
                     {

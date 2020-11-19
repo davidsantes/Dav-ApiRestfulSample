@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30709.132
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiRestful.Service", "ApiRestful.Service\ApiRestful.Service.csproj", "{5E7B2A90-FCB3-463D-AA7B-C7E80AD65AF0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiRestful.Test", "XUnitTestProject1\ApiRestful.Test.csproj", "{522D01C5-D304-4014-BE99-3A7397D9A91F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiRestful.Test", "ApiRestful.Test\ApiRestful.Test.csproj", "{522D01C5-D304-4014-BE99-3A7397D9A91F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

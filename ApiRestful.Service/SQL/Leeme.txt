@@ -1,0 +1,5 @@
+Para este ejemplo, es necesario:
+- Crear una base de datos SQL
+- Crear la tabla [Product]. En el script SQLCreateProductTable.sql tienes cómo hacerlo.
+- Configurar el ConnectionString, en la clase InventoryContext
+- Si quieres introducir más productos, puedes ejecutar el test unitario IntegrationProductTest.Api_Product_Post_Product

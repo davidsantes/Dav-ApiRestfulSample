@@ -1,6 +1,6 @@
-﻿namespace ApiRestful.Service.Dtos
+﻿namespace ApiRestful.Service.ExternalDtos
 {
-    public class ProductDto
+    public class ProductExternalDto
     {
         public string ProductId { get; set; }
 

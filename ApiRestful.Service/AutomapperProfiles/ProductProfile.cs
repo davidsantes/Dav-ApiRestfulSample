@@ -1,4 +1,4 @@
-﻿using ApiRestful.Service.Dtos;
+﻿using ApiRestful.Service.ExternalDtos;
 using ApiRestful.Service.Entities;
 using AutoMapper;
 
@@ -8,8 +8,8 @@ namespace ApiRestful.Service.AutomapperProfiles
     {
         public ProductProfile()
         {
-            CreateMap<ProductEntity, ProductDto>();            
-            CreateMap<ProductDto, ProductEntity>();            
+            CreateMap<ProductEntity, ProductExternalDto>();            
+            CreateMap<ProductExternalDto, ProductEntity>();            
         }
     }
 }
