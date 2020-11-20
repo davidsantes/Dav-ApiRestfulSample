@@ -40,7 +40,7 @@ Una vez descargado el código, el primer paso es configurar la base de datos. Pa
 
 Si todo ha ido bien, deberás:
 * Configurar el proyecto ApiRestful.Service como proyecto principal.
-* Si ejecutas Visual Studio, deberá salir la auto-documentación se Swagger con los ejemplos.
+* Si ejecutas Visual Studio, deberá salir la auto-documentación de Swagger con ejemplos.
 * También podrás ejecutar los test de integración de ApiRestful.Test que testean ApiRestful.Service.
 
 ### ¿Qué falta? 🔩
