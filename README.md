@@ -43,6 +43,13 @@ Si todo ha ido bien, deberás:
 * Si ejecutas Visual Studio, deberá salir la auto-documentación de Swagger con ejemplos.
 * También podrás ejecutar los test de integración de ApiRestful.Test que testean ApiRestful.Service.
 
+## Estado de la compilación ⚙️
+Este proyecto utiliza las Actions de Integración Continua de Github. Espero que el estado siga siendo verde:
+![CI](https://github.com/davidsantes/ApiRestfulSample/workflows/CI/badge.svg)
+
+Por otro lado, si quiesres consultar cómo hacer la integración, te aconsejo que veas el archivo dotnet.yml, o para más información:
+* [Fixedbuffer](https://www.fixedbuffer.com/herramientas-de-desarollo-github-actions-como-ci-para-net-core/) - Herramientas de desarollo: Github Actions como CI para .Net
+
 ### ¿Qué falta? 🔩
 
 Muchísimas cosas. Desde un testeo completo de todos los métodos, pasando por hacer una estructura "digna" en ApiRestful.Service, o implementar tokens con JWT, por ejemplo.
