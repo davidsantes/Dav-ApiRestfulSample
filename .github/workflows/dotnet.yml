@@ -17,9 +17,15 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
-
+      strategy:
+        matrix:
+            agent: ['windows-latest','ubuntu-latest','macos-latest']
+  
+    # Para que se despliegue en los tres sistemas operativos dispuestos en la matriz de la estrategia
+    runs-on: ${{matrix.agent}}
+    # Se le pone a cada una de las integraciones un nombre identificativo, utilizando la variable de la matriz:
+    name: Integration in ${{matrix.agent}}
+    
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -30,4 +36,4 @@ jobs:
         with:
             dotnet-version: '5.0.x'
       - run: dotnet build "ApiRestfulSample.sln"
-      - run: dotnet test "ApiRestfulSample.sln"
+      #- run: dotnet test "ApiRestfulSample.sln" #Para que funcionaran correctamente los test, habría que moquear el HttpClient
