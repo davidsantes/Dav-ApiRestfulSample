@@ -47,7 +47,7 @@ Si todo ha ido bien, deberás:
 Este proyecto utiliza las Actions de Integración Continua de Github. Espero que el estado siga siendo verde:
 ![CI](https://github.com/davidsantes/ApiRestfulSample/workflows/CI/badge.svg)
 
-Por otro lado, si quiesres consultar cómo hacer la integración, te aconsejo que veas el archivo dotnet.yml, o para más información:
+Por otro lado, si quieres consultar cómo hacer la integración, te aconsejo que revises el archivo dotnet.yml, o si necesitas más información:
 * [Fixedbuffer](https://www.fixedbuffer.com/herramientas-de-desarollo-github-actions-como-ci-para-net-core/) - Herramientas de desarollo: Github Actions como CI para .Net
 
 ### ¿Qué falta? 🔩
