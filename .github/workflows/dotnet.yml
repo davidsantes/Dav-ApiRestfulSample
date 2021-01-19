@@ -17,10 +17,12 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build:
-      strategy:
-        matrix:
-            agent: ['windows-latest']      
+        
+    strategy:
+      matrix:
+        agent: ['windows-latest','ubuntu-latest','macos-latest']
     runs-on: ${{matrix.agent}}
+    
     # Se le pone a cada una de las integraciones un nombre identificativo, utilizando la variable de la matriz:
     name: Integration in ${{matrix.agent}}
     
