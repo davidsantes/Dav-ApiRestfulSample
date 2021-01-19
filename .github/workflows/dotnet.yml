@@ -19,9 +19,7 @@ jobs:
   build:
       strategy:
         matrix:
-            agent: ['windows-latest','ubuntu-latest','macos-latest']
-  
-    # Para que se despliegue en los tres sistemas operativos dispuestos en la matriz de la estrategia
+            agent: ['windows-latest']      
     runs-on: ${{matrix.agent}}
     # Se le pone a cada una de las integraciones un nombre identificativo, utilizando la variable de la matriz:
     name: Integration in ${{matrix.agent}}
