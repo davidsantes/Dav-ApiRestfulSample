@@ -17,7 +17,8 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build:
-        
+    
+    # Creamos diferentes estrategias para que funcione en windows, ubuntu y mac os:
     strategy:
       matrix:
         agent: ['windows-latest','ubuntu-latest','macos-latest']
@@ -30,10 +31,14 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      
-      # Install net core sdk for .NET5
-      - uses: actions/setup-dotnet@v1
+            
+      - name: Setup .NET5
+        uses: actions/setup-dotnet@v1
         with:
-            dotnet-version: '5.0.x'
-      - run: dotnet build "ApiRestfulSample.sln"
+            dotnet-version: '5.0.x'            
+      - name: Clean
+        run: dotnet clean "ApiRestfulSample.sln" --configuration Release && dotnet nuget locals all --clear
+      - name: Build with dotnet
+        run: dotnet build "ApiRestfulSample.sln"
+      #- name: Test with dotnet
       #- run: dotnet test "ApiRestfulSample.sln" #Para que funcionaran correctamente los test, habría que moquear el HttpClient
